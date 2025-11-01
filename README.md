@@ -11,7 +11,7 @@
 | 🎀 Name | **Grandpa EJ** |
 | 🕰️ Age | Timeless (10+ years of coding chaos 😌) |
 | 😴 Hobby | Midnight coding & tea breaks |
-| 🎯 Mission | Build cool stuff, rule GitHub quietly 🖤 |
+| 🎯 Mission | a Peaceful Life 🖤 |
 
 ---
 
