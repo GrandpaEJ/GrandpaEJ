@@ -1,12 +1,68 @@
-# 👋 Hi, I'm GrandpaEJ ( Ebtisam Jubair )
+<div align="center">
 
-🎨 Builder of [imgrs](https://github.com/GrandpaEJ/imgrs) , [Advancegg](https://github.com/GrandpaEJ/advancegg)
+# 👴💀 Grandpa EJ in Dark Mode  
+### ⚡ Code Alchemist | 🧠 Night Owl | 😴 Dream-Builder
 
-📫 Reach me at: soon...
-🌐 Portfolio: https://grandpaej.grandpaacademy.org
+---
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=grandpaej&show_icons=true&locale=en" alt="grandpaej" />
-<!-- Top Languages -->
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=GrandpaEJ&layout=compact&theme=radical">
+### 🩶 Who Am I?
+| 🧾 Fact | 👀 Detail |
+|---|---|
+| 🎀 Name | **Grandpa EJ** |
+| 🕰️ Age | Timeless (10+ years of coding chaos 😌) |
+| 😴 Hobby | Midnight coding & tea breaks |
+| 🎯 Mission | Build cool stuff, rule GitHub quietly 🖤 |
+
+---
+
+### ⚔️ Welcome to Grandpa’s Lair
+
+> _“While others sleep… Grandpa builds worlds.”_  
+— occasionally naps in between 😌💤
+
+---
+
+### 🖤 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=grandpaej&show_icons=true&theme=tokyonight&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GrandpaEJ&layout=compact&theme=tokyonight&hide_border=true" width="48%" />
 </p>
-<img src="https://visitor-badge.laobi.icu/badge?page_id=grandpaej">
+
+---
+
+### 🐍 Snake in the Shadows
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake-dark.svg#gh-dark-mode-only" />
+<img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake.svg#gh-light-mode-only" />
+</p>
+
+---
+
+### 🌙 Grandpa’s Dark-Wisdom
+> _“Code hard, nap harder, caffeinate often.”_
+
+---
+
+### 🌚 Social Energy  
+🖤 Follow  
+✨ Star repos  
+😴 Sleep  
+💬 Repeat  
+
+---
+
+### ⚡ Featured Projects
+
+| Project | Description |
+|---|---|
+| [imgrs](https://github.com/GrandpaEJ/imgrs) | A Pillow-like image library built with **Rust + Python** 🖼️ |
+| [Advancegg](https://github.com/GrandpaEJ/advancegg) | A “GG” gaming toolkit with **advanced features for Go packages** 🎮 |
+
+---
+
+### 👁️ Visitor Badge
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=grandpaej)
+
+</div>
