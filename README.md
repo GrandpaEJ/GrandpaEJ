@@ -1,6 +1,6 @@
 <div align="center">
 
-# 👴💀 Grandpa EJ in Dark Mode  
+# 🕊️ Grandpa EJ in Dark Mode  
 ### ⚡ Code Alchemist | 🧠 Night Owl | 😴 Dream-Builder
 
 ---
