@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🕊️ Grandpa EJ in Dark Mode  
+# 🕊️ Grandpa EJ 
 ### ⚡ Code Alchemist | 🧠 Night Owl | 😴 Dream-Builder
 
 ---
@@ -9,7 +9,7 @@
 | 🧾 Fact | 👀 Detail |
 |---|---|
 | 🎀 Name | **Grandpa EJ** |
-| 🕰️ Age | Timeless (10+ years of coding chaos 😌) |
+| 🕰️ Age | Timeless (10+ 😌) |
 | 😴 Hobby | Midnight coding & tea breaks |
 | 🎯 Mission | a Peaceful Life 🖤 |
 
