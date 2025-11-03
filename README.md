@@ -58,7 +58,7 @@
 | Project | Description |
 |---|---|
 | [imgrs](https://github.com/GrandpaEJ/imgrs) | A Pillow-like image library built with **Rust + Python** 🖼️ |
-| [Advancegg](https://github.com/GrandpaEJ/advancegg) | A “GG” gaming toolkit with **advanced features for Go packages** 🎮 |
+| [Advancegg](https://github.com/GrandpaEJ/advancegg) | A “GG” image toolkit with **advanced features for Go packages** 🎮 |
 
 ---
 
