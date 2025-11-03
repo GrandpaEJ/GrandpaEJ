@@ -43,13 +43,6 @@
 ### 🌙 Grandpa’s Dark-Wisdom
 > _“Code hard, nap harder, caffeinate often.”_
 
----
-
-### 🌚 Social Energy  
-🖤 Follow  
-✨ Star repos  
-😴 Sleep  
-💬 Repeat  
 
 ---
 
@@ -62,7 +55,7 @@
 
 ---
 
-### 👁️ Visitor Badge
+### 👁️ Visitor 
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=grandpaej)
 
 </div>
