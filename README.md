@@ -1,8 +1,7 @@
 <div align="center">
 
 # 🕊️ Grandpa EJ 
-### ⚡ Code Alchemist | 🧠 Night Owl | 😴 Dream-Builder
-
+\>_ “People with experience and a childlike heart are grandpas. I only have the childlike heart—so here I am, Grandpa EJ.”
 ---
 
 ### 🩶 Who Am I?
@@ -10,15 +9,14 @@
 |---|---|
 | 🎀 Name | **Grandpa EJ** |
 | 🕰️ Age | Timeless (10+ 😌) |
-| 😴 Hobby | Midnight coding & tea breaks |
+| 😴 Hobby | Sleeping |
 | 🎯 Mission | a Peaceful Life 🖤 |
 
 ---
 
-### ⚔️ Welcome to Grandpa’s Lair
-
-> _“While others sleep… Grandpa builds worlds.”_  
-— occasionally naps in between 😌💤
+### Welcome to Grandpa’s Profile
+\>_ “Live a peaceful life with Islam.
+There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 
 ---
 
@@ -40,8 +38,8 @@
 
 ---
 
-### 🌙 Grandpa’s Dark-Wisdom
-> _“Code hard, nap harder, caffeinate often.”_
+### 🌙 Grandpa’s Wisdom
+\>_ “Know the truth of Islam before forming an opinion. Ignorance judges fast; wisdom learns first.”
 
 
 ---
