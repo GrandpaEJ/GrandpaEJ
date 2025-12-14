@@ -11,6 +11,7 @@
 | 🕰️ Age | Timeless (10+ 😌) |
 | 😴 Hobby | Sleeping |
 | 🎯 Mission | a Peaceful Life 🖤 |
+| 🔎 Contact | [`TELEGRAM`](https://t.me/GrandpaEJ)
 
 ---
 
