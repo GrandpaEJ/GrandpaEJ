@@ -1,0 +1,79 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    # Run once per day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout donation branch
+        uses: actions/checkout@v4
+        with:
+          ref: donation
+      
+      - name: Fetch GitHub Stats
+        id: stats
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Fetch user data
+          USER_DATA=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/users/GrandpaEJ")
+          
+          # Extract stats
+          REPOS=$(echo "$USER_DATA" | jq '.public_repos')
+          FOLLOWERS=$(echo "$USER_DATA" | jq '.followers')
+          
+          # Fetch all repos to calculate total stars
+          REPOS_DATA=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/users/GrandpaEJ/repos?per_page=100")
+          
+          TOTAL_STARS=$(echo "$REPOS_DATA" | jq '[.[].stargazers_count] | add // 0')
+          
+          echo "repos=$REPOS" >> $GITHUB_OUTPUT
+          echo "followers=$FOLLOWERS" >> $GITHUB_OUTPUT
+          echo "stars=$TOTAL_STARS" >> $GITHUB_OUTPUT
+          
+          echo "📊 Stats fetched:"
+          echo "  Repos: $REPOS"
+          echo "  Followers: $FOLLOWERS"  
+          echo "  Total Stars: $TOTAL_STARS"
+      
+      - name: Update index.html with stats
+        run: |
+          REPOS="${{ steps.stats.outputs.repos }}"
+          FOLLOWERS="${{ steps.stats.outputs.followers }}"
+          STARS="${{ steps.stats.outputs.stars }}"
+          
+          # Update Repos stat
+          sed -i "s|<span class=\"stat-number\">[0-9]*</span>\n*[[:space:]]*<span class=\"stat-label\">Repos|<span class=\"stat-number\">$REPOS</span>\n                    <span class=\"stat-label\">Repos|g" index.html
+          
+          # Update Followers stat
+          sed -i "s|<span class=\"stat-number\">[0-9]*</span>\n*[[:space:]]*<span class=\"stat-label\">Followers|<span class=\"stat-number\">$FOLLOWERS</span>\n                    <span class=\"stat-label\">Followers|g" index.html
+          
+          # Update Stars stat
+          sed -i "s|<span class=\"stat-number\">[0-9.k+]*</span>\n*[[:space:]]*<span class=\"stat-label\">Stars|<span class=\"stat-number\">$STARS</span>\n                    <span class=\"stat-label\">Stars|g" index.html
+          
+          echo "✅ Updated stats: Repos=$REPOS, Followers=$FOLLOWERS, Stars=$STARS"
+      
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check if there are changes
+          if git diff --quiet; then
+            echo "📊 No changes to commit - stats are already up to date"
+          else
+            git add index.html
+            git commit -m "📊 Auto-update stats: $(date +'%Y-%m-%d')"
+            git push
+            echo "✅ Changes pushed successfully"
+          fi

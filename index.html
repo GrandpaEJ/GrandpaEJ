@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandpa EJ | Developer & Creator</title>
+    <meta name="description"
+        content="Ebtisam Jubair (Grandpa EJ) - Building high-performance tools in Python, Rust, and Go.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="avatar-wrapper">
+                <img src="https://github.com/grandpaej.png" alt="Grandpa EJ" class="avatar">
+                <div class="avatar-ring"></div>
+                <div class="avatar-glow"></div>
+            </div>
+            <h1 class="hero-title">Ebtisam Jubair</h1>
+            <p class="hero-subtitle">Grandpa EJ</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">17</span>
+                    <span class="stat-label">Repos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">42</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1.5k+</span>
+                    <span class="stat-label">Stars</span>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <span>Scroll</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content reveal">
+                <p class="about-quote">"People with experience and a childlike heart are grandpas. I only have the
+                    childlike heart—so here I am, Grandpa EJ."</p>
+                <p class="about-mission">🖤 A Peaceful Life</p>
+                <p class="about-text">I'm passionate about building blazingly fast, high-performance tools. My work
+                    spans Python frameworks, Rust-powered libraries, and Go graphics engines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="projects-grid">
+                <a href="https://github.com/GrandpaEJ/BustAPI" target="_blank" class="project-card reveal">
+                    <div class="project-icon">🚀</div>
+                    <h3 class="project-title">BustAPI</h3>
+                    <p class="project-desc">A High-Performance Python Web Framework</p>
+                    <div class="project-meta">
+                        <span class="project-lang python">Python</span>
+                        <span class="project-stars">⭐ 99</span>
+                    </div>
+                </a>
+                <a href="https://github.com/GrandpaEJ/advancegg" target="_blank" class="project-card reveal">
+                    <div class="project-icon">🎨</div>
+                    <h3 class="project-title">advancegg</h3>
+                    <p class="project-desc">Modern 2D graphics library for Go</p>
+                    <div class="project-meta">
+                        <span class="project-lang go">Go</span>
+                        <span class="project-stars">⭐ 20</span>
+                    </div>
+                </a>
+                <a href="https://github.com/GrandpaEJ/imgrs" target="_blank" class="project-card reveal">
+                    <div class="project-icon">🖼️</div>
+                    <h3 class="project-title">imgrs</h3>
+                    <p class="project-desc">Rust-powered image processing for Python</p>
+                    <div class="project-meta">
+                        <span class="project-lang rust">Rust</span>
+                        <span class="project-stars">⭐ 13</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">Tech Stack</h2>
+            <div class="skills-grid reveal">
+                <div class="skill-badge python">
+                    <span class="skill-icon">🐍</span>
+                    <span>Python</span>
+                    <span class="skill-pct">38%</span>
+                </div>
+                <div class="skill-badge rust">
+                    <span class="skill-icon">🦀</span>
+                    <span>Rust</span>
+                    <span class="skill-pct">24%</span>
+                </div>
+                <div class="skill-badge go">
+                    <span class="skill-icon">🐹</span>
+                    <span>Go</span>
+                    <span class="skill-pct">20%</span>
+                </div>
+                <div class="skill-badge c">
+                    <span class="skill-icon">⚙️</span>
+                    <span>C</span>
+                    <span class="skill-pct">15%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section class="section donate-section" id="donate">
+        <div class="container">
+            <h2 class="section-title reveal">Support My Work</h2>
+            <p class="donate-subtitle reveal">Your contribution helps me keep building open-source tools.</p>
+            <div class="donate-card reveal">
+                <div class="donate-header">
+                    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=026" alt="Binance"
+                        class="donate-logo">
+                    <span>Binance ID</span>
+                </div>
+                <div class="donate-address">
+                    <code id="wallet-address">1010167458</code>
+                    <button id="copy-btn" class="copy-btn" aria-label="Copy Address">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span class="copy-text">Copy</span>
+                    </button>
+                </div>
+            </div>
+            <div id="toast" class="toast">✓ ID Copied!</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/grandpaej" target="_blank" aria-label="GitHub" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://x.com/theGrandpaEJ" target="_blank" aria-label="Twitter" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+                <a href="https://t.me/GrandpaEJ" target="_blank" aria-label="Telegram" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                </a>
+                <a href="http://GrandpaAcademy.org" target="_blank" aria-label="Website" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="footer-text">© 2026 Grandpa EJ. Built with 🖤</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
