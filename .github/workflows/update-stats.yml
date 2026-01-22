@@ -13,10 +13,10 @@ jobs:
       contents: write
     
     steps:
-      - name: Checkout donation branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: donation
+          ref: main
       
       - name: Fetch GitHub Stats
         id: stats
