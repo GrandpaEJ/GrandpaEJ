@@ -2,9 +2,8 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    # Run once per day at midnight UTC
-    - cron: '0 0 * * *'
-  workflow_dispatch: # Allow manual trigger
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   update-stats:
@@ -52,14 +51,15 @@ jobs:
           FOLLOWERS="${{ steps.stats.outputs.followers }}"
           STARS="${{ steps.stats.outputs.stars }}"
           
+          # Use perl for proper multiline regex matching
           # Update Repos stat
-          sed -i "s|<span class=\"stat-number\">[0-9]*</span>\n*[[:space:]]*<span class=\"stat-label\">Repos|<span class=\"stat-number\">$REPOS</span>\n                    <span class=\"stat-label\">Repos|g" index.html
+          perl -i -0pe "s|(<span class=\"stat-number\">)[^<]*(</span>\s*<span class=\"stat-label\">Repos)|\${1}${REPOS}\${2}|gs" index.html
           
           # Update Followers stat
-          sed -i "s|<span class=\"stat-number\">[0-9]*</span>\n*[[:space:]]*<span class=\"stat-label\">Followers|<span class=\"stat-number\">$FOLLOWERS</span>\n                    <span class=\"stat-label\">Followers|g" index.html
+          perl -i -0pe "s|(<span class=\"stat-number\">)[^<]*(</span>\s*<span class=\"stat-label\">Followers)|\${1}${FOLLOWERS}\${2}|gs" index.html
           
           # Update Stars stat
-          sed -i "s|<span class=\"stat-number\">[0-9.k+]*</span>\n*[[:space:]]*<span class=\"stat-label\">Stars|<span class=\"stat-number\">$STARS</span>\n                    <span class=\"stat-label\">Stars|g" index.html
+          perl -i -0pe "s|(<span class=\"stat-number\">)[^<]*(</span>\s*<span class=\"stat-label\">Stars)|\${1}${STARS}\${2}|gs" index.html
           
           echo "✅ Updated stats: Repos=$REPOS, Followers=$FOLLOWERS, Stars=$STARS"
       
