@@ -36,20 +36,34 @@ jobs:
           
           TOTAL_STARS=$(echo "$REPOS_DATA" | jq '[.[].stargazers_count] | add // 0')
           
+          # Get individual project stars
+          BUSTAPI_STARS=$(echo "$REPOS_DATA" | jq '[.[] | select(.name == "BustAPI")] | .[0].stargazers_count // 0')
+          ADVANCEGG_STARS=$(echo "$REPOS_DATA" | jq '[.[] | select(.name == "advancegg")] | .[0].stargazers_count // 0')
+          IMGRS_STARS=$(echo "$REPOS_DATA" | jq '[.[] | select(.name == "imgrs")] | .[0].stargazers_count // 0')
+          
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
           echo "followers=$FOLLOWERS" >> $GITHUB_OUTPUT
           echo "stars=$TOTAL_STARS" >> $GITHUB_OUTPUT
+          echo "bustapi_stars=$BUSTAPI_STARS" >> $GITHUB_OUTPUT
+          echo "advancegg_stars=$ADVANCEGG_STARS" >> $GITHUB_OUTPUT
+          echo "imgrs_stars=$IMGRS_STARS" >> $GITHUB_OUTPUT
           
           echo "📊 Stats fetched:"
           echo "  Repos: $REPOS"
           echo "  Followers: $FOLLOWERS"  
           echo "  Total Stars: $TOTAL_STARS"
+          echo "  BustAPI: $BUSTAPI_STARS ⭐"
+          echo "  advancegg: $ADVANCEGG_STARS ⭐"
+          echo "  imgrs: $IMGRS_STARS ⭐"
       
       - name: Update index.html with stats
         run: |
           REPOS="${{ steps.stats.outputs.repos }}"
           FOLLOWERS="${{ steps.stats.outputs.followers }}"
           STARS="${{ steps.stats.outputs.stars }}"
+          BUSTAPI="${{ steps.stats.outputs.bustapi_stars }}"
+          ADVANCEGG="${{ steps.stats.outputs.advancegg_stars }}"
+          IMGRS="${{ steps.stats.outputs.imgrs_stars }}"
           
           # Use perl for proper multiline regex matching
           # Update Repos stat
@@ -61,7 +75,13 @@ jobs:
           # Update Stars stat
           perl -i -0pe "s|(<span class=\"stat-number\">)[^<]*(</span>\s*<span class=\"stat-label\">Stars)|\${1}${STARS}\${2}|gs" index.html
           
-          echo "✅ Updated stats: Repos=$REPOS, Followers=$FOLLOWERS, Stars=$STARS"
+          # Update project stars
+          perl -i -0pe "s|(BustAPI.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${BUSTAPI}\${2}|gs" index.html
+          perl -i -0pe "s|(advancegg.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${ADVANCEGG}\${2}|gs" index.html
+          perl -i -0pe "s|(imgrs.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${IMGRS}\${2}|gs" index.html
+          
+          echo "✅ Updated hero stats: Repos=$REPOS, Followers=$FOLLOWERS, Stars=$STARS"
+          echo "✅ Updated project stars: BustAPI=$BUSTAPI, advancegg=$ADVANCEGG, imgrs=$IMGRS"
       
       - name: Commit and Push
         run: |
