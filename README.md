@@ -14,8 +14,6 @@
 | 🔎 Contact | [`TELEGRAM`](https://t.me/GrandpaEJ)
 
 ---
-
-### Welcome to Grandpa’s Profile
 \>_ “Live a peaceful life with Islam.
 There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 
@@ -30,7 +28,7 @@ There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 
 ---
 
-### 🐍 Snake in the Shadows
+### 🐍 
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake-dark.svg#gh-dark-mode-only" />
@@ -39,7 +37,7 @@ There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 
 ---
 
-### 🌙 Grandpa’s Wisdom
+### 🌙
 \>_ “Know the truth of Islam before forming an opinion. Ignorance judges fast; wisdom learns first.”
 
 
