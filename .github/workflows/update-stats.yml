@@ -2,11 +2,9 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs daily at midnight UTC (6 AM BDT)
+    - cron: "0 0 * * *"
   push:
     branches: [main]
-    paths:
-      - '.github/workflows/update-stats.yml'  # Only on workflow changes
   workflow_dispatch:
 
 jobs:
@@ -16,11 +14,12 @@ jobs:
       contents: write
     
     steps:
-      - name: Checkout main branch
+      - name: Checkout donation branch
         uses: actions/checkout@v4
         with:
-          ref: main
-      
+          ref: donation
+          fetch-depth: 0
+
       - name: Fetch GitHub Stats
         id: stats
         env:
@@ -98,6 +97,6 @@ jobs:
           else
             git add index.html
             git commit -m "📊 Auto-update stats: $(date +'%Y-%m-%d')"
-            git push
-            echo "✅ Changes pushed successfully"
+            git push origin HEAD:donation
+            echo "✅ Changes pushed successfully to donation branch"
           fi
