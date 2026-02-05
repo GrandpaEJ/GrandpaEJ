@@ -57,4 +57,11 @@ There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 ### 👁️ Visitor 
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=grandpaej)
 
+### 🧊 3D Contribution Graph
+<p align="center">
+  <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" />
+</p>
+
+---
+
 </div>
