@@ -1,32 +1,19 @@
 <div align="center">
 
 # 🕊️ Grandpa EJ 
-\>_ “People with experience and a childlike heart are grandpas. I only have the childlike heart—so here I am, Grandpa EJ.”
----
-
-### 🩶 Who Am I?
-| 🧾 Fact | 👀 Detail |
-|---|---|
-| 🎀 Name | **Grandpa EJ** |
-| 🕰️ Age | Timeless (10+ 😌) |
-| 😴 Hobby | Sleeping |
-| 🎯 Mission | a Peaceful Life 🖤 |
-| 🔎 Contact | [`TELEGRAM`](https://t.me/GrandpaEJ)
+\>_ “There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 
 ---
-\>_ “Live a peaceful life with Islam.
-There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
+### 🌙
+\>_ “Know the truth of Islam before forming an opinion. Ignorance judges fast; wisdom learns first.”
 
 ---
 
 ### 🖤 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats-clone-sigma.vercel.app/api?username=grandpaej&show_icons=true&theme=tokyonight&hide_border=true" width="48%" />
-  <img src="https://github-readme-stats-clone-sigma.vercel.app/api/top-langs/?username=GrandpaEJ&layout=compact&theme=tokyonight&hide_border=true" width="48%" />
+  <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" />
 </p>
-
----
 
 ### 🐍 
 
@@ -34,12 +21,6 @@ There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake-dark.svg#gh-dark-mode-only" />
 <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake.svg#gh-light-mode-only" />
 </p>
-
----
-
-### 🌙
-\>_ “Know the truth of Islam before forming an opinion. Ignorance judges fast; wisdom learns first.”
-
 
 ---
 
@@ -56,11 +37,6 @@ There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 
 ### 👁️ Visitor 
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=grandpaej)
-
-### 🧊 3D Contribution Graph
-<p align="center">
-  <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" />
-</p>
 
 ---
 
