@@ -152,9 +152,213 @@
                     </button>
                 </div>
             </div>
+            <div class="crypto-more-btn-wrapper reveal">
+                <button id="crypto-more-btn" class="crypto-more-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                    More Crypto Options
+                </button>
+            </div>
             <div id="toast" class="toast">✓ ID Copied!</div>
         </div>
     </section>
+
+    <!-- Crypto Dialog Modal -->
+    <div id="crypto-dialog" class="crypto-dialog">
+        <div class="crypto-dialog-overlay"></div>
+        <div class="crypto-dialog-content">
+            <div class="crypto-dialog-header">
+                <h3>Cryptocurrency Addresses</h3>
+                <button id="close-dialog" class="close-dialog-btn" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="crypto-dialog-body">
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="Ethereum"
+                            class="crypto-icon">
+                        <span class="crypto-name">Ethereum (ETH)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9</code>
+                        <button class="crypto-copy-btn" data-address="0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/bnb-bnb-logo.svg" alt="BNB" class="crypto-icon">
+                        <span class="crypto-name">BNB (BNB)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9</code>
+                        <button class="crypto-copy-btn" data-address="0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/polygon-matic-logo.svg" alt="Polygon"
+                            class="crypto-icon">
+                        <span class="crypto-name">Polygon (MATIC)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9</code>
+                        <button class="crypto-copy-btn" data-address="0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/solana-sol-logo.svg" alt="Solana" class="crypto-icon">
+                        <span class="crypto-name">Solana (SOL)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">6RYAAf7RoG3XKazEimYQ848CcJUjdXV7gqpTjiUkJsJZ</code>
+                        <button class="crypto-copy-btn" data-address="6RYAAf7RoG3XKazEimYQ848CcJUjdXV7gqpTjiUkJsJZ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/tron-trx-logo.svg" alt="Tron" class="crypto-icon">
+                        <span class="crypto-name">Tron (TRX)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">THicuE9xASxT8QeSwpQjBXp4Ja4gPoHPiy</code>
+                        <button class="crypto-copy-btn" data-address="THicuE9xASxT8QeSwpQjBXp4Ja4gPoHPiy">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="Bitcoin" class="crypto-icon">
+                        <span class="crypto-name">Bitcoin (BTC)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">bc1qgsrfrfzx2qfhztua6fur4wc68l9e5qeg0s85cj</code>
+                        <button class="crypto-copy-btn" data-address="bc1qgsrfrfzx2qfhztua6fur4wc68l9e5qeg0s85cj">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.svg" alt="Optimism"
+                            class="crypto-icon">
+                        <span class="crypto-name">Optimism (OP)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9</code>
+                        <button class="crypto-copy-btn" data-address="0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://icons.llamao.fi/icons/chains/rsz_base.jpg" alt="Base" class="crypto-icon">
+                        <span class="crypto-name">Base</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9</code>
+                        <button class="crypto-copy-btn" data-address="0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://cryptologos.cc/logos/arbitrum-arb-logo.svg" alt="Arbitrum"
+                            class="crypto-icon">
+                        <span class="crypto-name">Arbitrum (ARB)</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9</code>
+                        <button class="crypto-copy-btn" data-address="0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="crypto-item">
+                    <div class="crypto-item-header">
+                        <img src="https://icons.llamao.fi/icons/chains/rsz_linea.jpg" alt="Linea" class="crypto-icon">
+                        <span class="crypto-name">Linea</span>
+                    </div>
+                    <div class="crypto-address-wrapper">
+                        <code class="crypto-address">0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9</code>
+                        <button class="crypto-copy-btn" data-address="0xf9bD8c1bA3D1C4dCEC8738CE36ff0ec05E5f1cB9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

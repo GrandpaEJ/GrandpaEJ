@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initScrollReveal();
     initCopyButton();
+    initCryptoDialog();
 });
 
 // ========== Floating Particles ==========
@@ -148,3 +149,98 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ========== Crypto Dialog ==========
+function initCryptoDialog() {
+    const cryptoDialog = document.getElementById('crypto-dialog');
+    const cryptoMoreBtn = document.getElementById('crypto-more-btn');
+    const closeDialogBtn = document.getElementById('close-dialog');
+    const dialogOverlay = cryptoDialog?.querySelector('.crypto-dialog-overlay');
+    const cryptoCopyBtns = document.querySelectorAll('.crypto-copy-btn');
+    const toast = document.getElementById('toast');
+
+    if (!cryptoDialog || !cryptoMoreBtn || !closeDialogBtn) return;
+
+    // Open dialog
+    cryptoMoreBtn.addEventListener('click', () => {
+        cryptoDialog.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close dialog
+    const closeDialog = () => {
+        cryptoDialog.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    closeDialogBtn.addEventListener('click', closeDialog);
+    dialogOverlay?.addEventListener('click', closeDialog);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cryptoDialog.classList.contains('active')) {
+            closeDialog();
+        }
+    });
+
+    // Copy crypto addresses
+    cryptoCopyBtns.forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const address = btn.getAttribute('data-address');
+            if (!address) return;
+
+            try {
+                await navigator.clipboard.writeText(address);
+                showCryptoToast('✓ Address Copied!');
+                animateCryptoCopyButton(btn);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                fallbackCryptoCopy(address, btn);
+            }
+        });
+    });
+
+    function showCryptoToast(message) {
+        if (!toast) return;
+        const originalText = toast.textContent;
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                toast.textContent = originalText;
+            }, 300);
+        }, 2000);
+    }
+
+    function animateCryptoCopyButton(btn) {
+        const originalBg = btn.style.background;
+        const originalColor = btn.style.color;
+        btn.style.background = 'var(--primary)';
+        btn.style.color = 'var(--bg-dark)';
+
+        setTimeout(() => {
+            btn.style.background = originalBg;
+            btn.style.color = originalColor;
+        }, 1500);
+    }
+
+    function fallbackCryptoCopy(text, btn) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            showCryptoToast('✓ Address Copied!');
+            animateCryptoCopyButton(btn);
+        } catch (err) {
+            console.error('Fallback copy failed:', err);
+        }
+
+        document.body.removeChild(textArea);
+    }
+}
