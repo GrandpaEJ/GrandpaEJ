@@ -671,6 +671,228 @@ body {
     font-size: 0.9rem;
 }
 
+/* ========== Crypto More Button ========== */
+.crypto-more-btn-wrapper {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.crypto-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 14px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.crypto-more-btn:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+.crypto-more-btn:active {
+    transform: translateY(0);
+}
+
+/* ========== Crypto Dialog Modal ========== */
+.crypto-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.crypto-dialog.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.crypto-dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.crypto-dialog-content {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+}
+
+.crypto-dialog.active .crypto-dialog-content {
+    transform: scale(1);
+}
+
+.crypto-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.crypto-dialog-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.close-dialog-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-dialog-btn:hover {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.crypto-dialog-body {
+    padding: 24px 28px;
+    max-height: calc(80vh - 100px);
+    overflow-y: auto;
+}
+
+.crypto-dialog-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.crypto-dialog-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.crypto-dialog-body::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+.crypto-dialog-body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dim);
+}
+
+.crypto-item {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.crypto-item:last-child {
+    margin-bottom: 0;
+}
+
+.crypto-item:hover {
+    border-color: var(--primary);
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.crypto-item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.crypto-icon {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+.crypto-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.crypto-address-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.crypto-address {
+    flex: 1;
+    font-family: 'Inter', monospace;
+    font-size: 0.9rem;
+    color: var(--primary);
+    word-break: break-all;
+    letter-spacing: 0.5px;
+}
+
+.crypto-copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.crypto-copy-btn:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    transform: scale(1.1);
+}
+
+.crypto-copy-btn:active {
+    transform: scale(0.95);
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
     .hero-stats {
@@ -701,5 +923,35 @@ body {
     .copy-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .crypto-dialog-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .crypto-dialog-header {
+        padding: 20px;
+    }
+
+    .crypto-dialog-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .crypto-dialog-body {
+        padding: 16px 20px;
+    }
+
+    .crypto-item {
+        padding: 16px;
+    }
+
+    .crypto-address {
+        font-size: 0.8rem;
+    }
+
+    .crypto-more-btn {
+        font-size: 0.9rem;
+        padding: 12px 24px;
     }
 }
