@@ -31,4 +31,5 @@ jobs:
           
           git add profile-3d-contrib/
           git commit -m "Update 3D contribution graph" || echo "No changes to commit"
+          git pull
           git push origin output
