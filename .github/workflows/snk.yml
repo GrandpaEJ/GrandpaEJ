@@ -27,12 +27,25 @@ jobs:
 
       - name: Push to output branch
         run: |
-          git config --global user.name "${{ github.repository_owner }}"
-          git config --global user.email "${{ github.repository_owner }}@users.noreply.github.com"
+          # Move generated files to a safe place
+          mv dist /tmp/dist
           
-          git checkout -B output
-          mkdir -p dist
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git fetch origin output || echo "Branch output not found"
+          
+          if git branch -r | grep -q "origin/output"; then
+            git checkout output
+          else
+            git checkout --orphan output
+            git rm -rf .
+          fi
+          
+          # Move files back
+          rm -rf dist
+          mv /tmp/dist dist
           
           git add dist/
           git commit -m "Update snake animation" || echo "No changes to commit"
-          git push origin output --force
+          git push origin output

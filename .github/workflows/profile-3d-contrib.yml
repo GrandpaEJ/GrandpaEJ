@@ -22,12 +22,24 @@ jobs:
 
       - name: Push to output branch
         run: |
-          git config user.name "${{ github.repository_owner }}"
-          git config user.email "${{ github.repository_owner }}@users.noreply.github.com"
+          # Move generated files to a safe place
+          mv profile-3d-contrib /tmp/profile-3d-contrib
           
-          # Try to fetch and checkout output branch to preserve existing files (like snk dist)
-          git fetch origin output
-          git checkout output || git checkout -B output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git fetch origin output || echo "Branch output not found"
+          
+          if git branch -r | grep -q "origin/output"; then
+            git checkout output
+          else
+            git checkout --orphan output
+            git rm -rf .
+          fi
+          
+          # Move files back
+          rm -rf profile-3d-contrib
+          mv /tmp/profile-3d-contrib profile-3d-contrib
           
           git add profile-3d-contrib/
           git commit -m "Update 3D contribution graph" || echo "No changes to commit"
