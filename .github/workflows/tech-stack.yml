@@ -1,0 +1,69 @@
+name: Tech Stack Grabber
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate Tech Stack
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+        run: python3 scripts/generate_tech_stack.py
+
+      - name: Push to output branch
+        run: |
+          # Move generated files to a safe place (we output to dist/tech-stack.svg)
+          mv dist /tmp/techstack-dist
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git fetch origin output || echo "Branch output not found"
+          
+          # Checkout output branch properly
+          if git branch -r | grep -q "origin/output"; then
+            git checkout output
+          else
+            git checkout --orphan output
+            git rm -rf .
+          fi
+          
+          # Safely move the new SVG into the existing dist/ folder
+          mkdir -p dist
+          cp -rf /tmp/techstack-dist/tech-stack.svg dist/tech-stack.svg
+          
+          git add dist/tech-stack.svg
+          git commit -m "Update Tech Stack SVG" || echo "No changes to commit"
+          
+          # Retry push with rebase to handle parallel workflow collisions
+          MAX_RETRIES=5
+          RETRY_COUNT=0
+          until git push origin output; do
+            RETRY_COUNT=$((RETRY_COUNT+1))
+            if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then
+              echo "Failed to push after $MAX_RETRIES attempts"
+              exit 1
+            fi
+            echo "Push failed, rebasing and retrying... ($RETRY_COUNT/$MAX_RETRIES)"
+            git pull --rebase origin output
+            sleep $(( (RANDOM % 10) + 5 ))
+          done
