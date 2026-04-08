@@ -1,0 +1,77 @@
+<svg width="350" height="325" viewBox="0 0 350 325" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font-family: 'Segoe UI', Ubuntu, sans-serif; font-weight: 600; font-size: 16px; fill: #c9d1d9; }
+    .lang-name { font-family: 'Segoe UI', Ubuntu, sans-serif; font-weight: 400; font-size: 13px; fill: #8b949e; }
+    .lang-percent { font-family: 'Segoe UI', Ubuntu, sans-serif; font-weight: 600; font-size: 13px; fill: #c9d1d9; }
+    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 6px; }
+  </style>
+  <rect class="bg" width="349" height="324" x="0.5" y="0.5" />
+  <text x="25" y="35" class="title">Tech Stack</text>
+  
+    <g transform="translate(25, 65)">
+      <circle cx="5" cy="-4" r="5" fill="#3572A5" />
+      <text x="18" y="0" class="lang-name">Python</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">33.6%</text>
+      
+      <!-- Progress Bar Background -->
+      <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
+      
+      <!-- Progress Bar Foreground -->
+      <line x1="0" y1="12" x2="94.13361150365128" y2="12" stroke="#3572A5" stroke-width="8" stroke-linecap="round" />
+    </g>
+    <g transform="translate(25, 105)">
+      <circle cx="5" cy="-4" r="5" fill="#dea584" />
+      <text x="18" y="0" class="lang-name">Rust</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">26.8%</text>
+      
+      <!-- Progress Bar Background -->
+      <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
+      
+      <!-- Progress Bar Foreground -->
+      <line x1="0" y1="12" x2="74.94444555426912" y2="12" stroke="#dea584" stroke-width="8" stroke-linecap="round" />
+    </g>
+    <g transform="translate(25, 145)">
+      <circle cx="5" cy="-4" r="5" fill="#00ADD8" />
+      <text x="18" y="0" class="lang-name">Go</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">18.9%</text>
+      
+      <!-- Progress Bar Background -->
+      <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
+      
+      <!-- Progress Bar Foreground -->
+      <line x1="0" y1="12" x2="52.9320940741442" y2="12" stroke="#00ADD8" stroke-width="8" stroke-linecap="round" />
+    </g>
+    <g transform="translate(25, 185)">
+      <circle cx="5" cy="-4" r="5" fill="#555555" />
+      <text x="18" y="0" class="lang-name">C</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">14.2%</text>
+      
+      <!-- Progress Bar Background -->
+      <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
+      
+      <!-- Progress Bar Foreground -->
+      <line x1="0" y1="12" x2="39.76617248586349" y2="12" stroke="#555555" stroke-width="8" stroke-linecap="round" />
+    </g>
+    <g transform="translate(25, 225)">
+      <circle cx="5" cy="-4" r="5" fill="#f1e05a" />
+      <text x="18" y="0" class="lang-name">JavaScript</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">2.8%</text>
+      
+      <!-- Progress Bar Background -->
+      <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
+      
+      <!-- Progress Bar Foreground -->
+      <line x1="0" y1="12" x2="7.80992698608193" y2="12" stroke="#f1e05a" stroke-width="8" stroke-linecap="round" />
+    </g>
+    <g transform="translate(25, 265)">
+      <circle cx="5" cy="-4" r="5" fill="#e34c26" />
+      <text x="18" y="0" class="lang-name">HTML</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">2.2%</text>
+      
+      <!-- Progress Bar Background -->
+      <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
+      
+      <!-- Progress Bar Foreground -->
+      <line x1="0" y1="12" x2="6.190158132645666" y2="12" stroke="#e34c26" stroke-width="8" stroke-linecap="round" />
+    </g>
+</svg>
