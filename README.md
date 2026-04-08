@@ -13,9 +13,10 @@
 ---
 
 ### 🖤 GitHub Stats
-<p align="center">
+
+<!-- <p align="center">
   <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/tech-stack.svg" alt="Top Tech Stack" />
-</p>
+</p> -->
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" />

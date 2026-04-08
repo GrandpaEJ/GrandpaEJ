@@ -118,7 +118,7 @@ def main():
     colors = get_colors()
     
     sorted_langs = sorted(language_stats.items(), key=lambda x: x[1], reverse=True)
-    top_langs = sorted_langs[:6]  # Display Top 6 languages
+    top_langs = sorted_langs[:6]
     
     print(f"Top languages: {[l[0] for l in top_langs]}")
     generate_svg(top_langs, total_bytes, colors)
