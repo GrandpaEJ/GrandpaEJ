@@ -1,0 +1,8 @@
+# Security policy for ej.grandpaacademy.org
+Contact: https://github.com/GrandpaEJ/.github/security
+Encryption: https://github.com/GrandpaEJ/public-key.asc
+Acknowledgments: https://ej.grandpaacademy.org/security-hall-of-fame
+Policy: https://ej.grandpaacademy.org/security-policy
+Preferred-Languages: en
+Canonical: https://ej.grandpaacademy.org/.well-known/security.txt
+Expires: 2027-12-31T23:59:59Z

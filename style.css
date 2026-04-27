@@ -509,6 +509,21 @@ body {
     font-size: 1.05rem;
 }
 
+.donate-disclaimer {
+    text-align: center;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 16px;
+    background: rgba(255, 193, 7, 0.05);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    border-radius: 12px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .donate-card {
     max-width: 450px;
     margin: 0 auto;
@@ -669,6 +684,17 @@ body {
 .footer-text {
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+.footer-link {
+    color: var(--primary-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 /* ========== Crypto More Button ========== */

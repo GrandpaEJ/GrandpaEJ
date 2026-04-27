@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Security.txt location
+Sitemap: https://ej.grandpaacademy.org/sitemap.xml
