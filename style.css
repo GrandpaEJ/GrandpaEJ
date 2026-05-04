@@ -422,6 +422,8 @@ a, button {
     font-weight: 600;
     font-size: 0.95rem;
     transition: var(--transition);
+    position: relative;
+    z-index: 1;
 }
 
 .btn-primary {

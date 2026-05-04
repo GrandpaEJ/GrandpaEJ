@@ -149,7 +149,9 @@ function initCryptoDialog() {
 
     if (!modal || !btn) return;
 
-    btn.addEventListener('click', () => modal.classList.add('open'));
+    btn.addEventListener('click', () => {
+        modal.classList.add('open');
+    });
     
     if (closeBtn) {
         closeBtn.addEventListener('click', () => modal.classList.remove('open'));
