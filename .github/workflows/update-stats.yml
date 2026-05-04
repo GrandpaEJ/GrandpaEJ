@@ -22,7 +22,7 @@ jobs:
 
       - name: Copy latest files from main
         run: |
-          git checkout origin/main -- index.html privacy.html style.css script.js robots.txt .well-known/security.txt
+          git checkout origin/main -- index.html privacy.html style.css script.js robots.txt .well-known/security.txt bnb.png favicon.ico favicon.png
 
       - name: Fetch GitHub Stats
         id: stats
@@ -74,18 +74,18 @@ jobs:
           
           # Use perl for proper multiline regex matching
           # Update Repos stat
-          perl -i -0pe "s|(<span class=\"stat-number\">)[^<]*(</span>\s*<span class=\"stat-label\">Repos)|\${1}${REPOS}\${2}|gs" index.html
+          perl -i -0pe "s|(<span class=\"stat-value\" data-count=\")[^\"]*(\">[^<]*</span>\s*<span class=\"stat-label\">Repos)|\${1}${REPOS}\${2}|gs" index.html
           
           # Update Followers stat
-          perl -i -0pe "s|(<span class=\"stat-number\">)[^<]*(</span>\s*<span class=\"stat-label\">Followers)|\${1}${FOLLOWERS}\${2}|gs" index.html
+          perl -i -0pe "s|(<span class=\"stat-value\" data-count=\")[^\"]*(\">[^<]*</span>\s*<span class=\"stat-label\">Followers)|\${1}${FOLLOWERS}\${2}|gs" index.html
           
           # Update Stars stat
-          perl -i -0pe "s|(<span class=\"stat-number\">)[^<]*(</span>\s*<span class=\"stat-label\">Stars)|\${1}${STARS}\${2}|gs" index.html
+          perl -i -0pe "s|(<span class=\"stat-value\" data-count=\")[^\"]*(\">[^<]*</span>\s*<span class=\"stat-label\">Stars)|\${1}${STARS}\${2}|gs" index.html
           
           # Update project stars
-          perl -i -0pe "s|(BustAPI.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${BUSTAPI}\${2}|gs" index.html
-          perl -i -0pe "s|(advancegg.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${ADVANCEGG}\${2}|gs" index.html
-          perl -i -0pe "s|(imgrs.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${IMGRS}\${2}|gs" index.html
+          perl -i -0pe "s|(BustAPI.*?<span class=\"project-stars\">\s*<svg.*?</svg>\s*)[^<\s]*|\${1}${BUSTAPI}|gs" index.html
+          perl -i -0pe "s|(advancegg.*?<span class=\"project-stars\">\s*<svg.*?</svg>\s*)[^<\s]*|\${1}${ADVANCEGG}|gs" index.html
+          perl -i -0pe "s|(imgrs.*?<span class=\"project-stars\">\s*<svg.*?</svg>\s*)[^<\s]*|\${1}${IMGRS}|gs" index.html
           
           # Remove safety notice / disclaimer that might be flagged as "dangerous"
           perl -i -0pe "s|<p class=\"donate-disclaimer reveal\">.*?</p>||gs" index.html
@@ -99,7 +99,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # Stage changes and check if there's anything new
-          git add index.html privacy.html style.css script.js robots.txt .well-known/security.txt
+          git add index.html privacy.html style.css script.js robots.txt .well-known/security.txt bnb.png favicon.ico favicon.png
           if ! git diff --cached --quiet; then
             git commit -m "📊 Auto-update stats and security: $(date +'%Y-%m-%d')"
             git push origin HEAD:donation
