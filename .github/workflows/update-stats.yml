@@ -98,9 +98,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Check if there are changes
-          if [ -n "$(git status --porcelain)" ]; then
-            git add index.html privacy.html robots.txt .well-known/security.txt
+          # Stage changes and check if there's anything new
+          git add index.html privacy.html style.css script.js robots.txt .well-known/security.txt
+          if ! git diff --cached --quiet; then
             git commit -m "📊 Auto-update stats and security: $(date +'%Y-%m-%d')"
             git push origin HEAD:donation
             echo "✅ Changes pushed successfully to donation branch"
