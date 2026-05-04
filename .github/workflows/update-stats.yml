@@ -22,7 +22,7 @@ jobs:
 
       - name: Copy latest files from main
         run: |
-          git checkout main -- index.html privacy.html style.css script.js robots.txt .well-known/security.txt
+          git checkout origin/main -- index.html privacy.html style.css script.js robots.txt .well-known/security.txt
 
       - name: Fetch GitHub Stats
         id: stats
