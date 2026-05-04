@@ -99,11 +99,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # Check if there are changes
-          if git diff --quiet; then
-            echo "📊 No changes to commit - stats are already up to date"
-          else
+          if [ -n "$(git status --porcelain)" ]; then
             git add index.html privacy.html robots.txt .well-known/security.txt
             git commit -m "📊 Auto-update stats and security: $(date +'%Y-%m-%d')"
             git push origin HEAD:donation
             echo "✅ Changes pushed successfully to donation branch"
+          else
+            echo "📊 No changes to commit - stats are already up to date"
           fi
