@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ej.grandpaacademy.org/sitemap.xml
