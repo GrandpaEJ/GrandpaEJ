@@ -52,6 +52,11 @@ body {
     min-height: 100vh;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 a, button {
     cursor: pointer;
     text-decoration: none;
@@ -1056,7 +1061,9 @@ a, button {
 .crypto-icon {
     width: 28px;
     height: 28px;
+    min-width: 28px;
     border-radius: 50%;
+    object-fit: contain;
 }
 
 .crypto-name {
