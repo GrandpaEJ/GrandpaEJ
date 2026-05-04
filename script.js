@@ -149,18 +149,24 @@ function initCryptoDialog() {
 
     if (!modal || !btn) return;
 
-    btn.onclick = () => modal.classList.add('open');
-    closeBtn.onclick = () => modal.classList.remove('open');
-    overlay.onclick = () => modal.classList.remove('open');
+    btn.addEventListener('click', () => modal.classList.add('open'));
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+    }
+    
+    if (overlay) {
+        overlay.addEventListener('click', () => modal.classList.remove('open'));
+    }
 
-    window.onkeydown = (e) => {
+    window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') modal.classList.remove('open');
-    };
+    });
     
     document.querySelectorAll('.btn-copy, .btn-copy-sm').forEach(copyBtn => {
         copyBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const address = this.dataset.address;
+            const address = this.dataset.address || this.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
             if (address) {
                 copyAddress(address, this);
             }
