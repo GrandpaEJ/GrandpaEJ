@@ -83,6 +83,9 @@ jobs:
           perl -i -0pe "s|(advancegg.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${ADVANCEGG}\${2}|gs" index.html
           perl -i -0pe "s|(imgrs.*?<span class=\"project-stars\">⭐ )[^<]*(</span>)|\${1}${IMGRS}\${2}|gs" index.html
           
+          # Remove safety notice / disclaimer that might be flagged as "dangerous"
+          perl -i -0pe "s|<p class=\"donate-disclaimer reveal\">.*?</p>||gs" index.html
+          
           echo "✅ Updated hero stats: Repos=$REPOS, Followers=$FOLLOWERS, Stars=$STARS"
           echo "✅ Updated project stars: BustAPI=$BUSTAPI, advancegg=$ADVANCEGG, imgrs=$IMGRS"
       
@@ -95,8 +98,8 @@ jobs:
           if git diff --quiet; then
             echo "📊 No changes to commit - stats are already up to date"
           else
-            git add index.html
-            git commit -m "📊 Auto-update stats: $(date +'%Y-%m-%d')"
+            git add index.html privacy.html robots.txt .well-known/security.txt
+            git commit -m "📊 Auto-update stats and security: $(date +'%Y-%m-%d')"
             git push origin HEAD:donation
             echo "✅ Changes pushed successfully to donation branch"
           fi
