@@ -1,21 +1,24 @@
 /* ========================================
-   Grandpa EJ | Premium Portfolio Script
+   Grandpa EJ | Modern Portfolio Script
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
-    initParticles();
+    initNoise();
+    initCountUp();
     initCryptoDialog();
+    initNav();
+    initTechGlow();
 });
 
 /* ========== Scroll Reveal ========== */
 function initScrollReveal() {
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal-item');
     
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                entry.target.classList.add('visible');
             }
         });
     }, {
@@ -28,18 +31,12 @@ function initScrollReveal() {
     });
 }
 
-/* ========== Particles System ========== */
-function initParticles() {
-    const canvas = document.createElement('canvas');
+/* ========== Noise Background ========== */
+function initNoise() {
+    const canvas = document.getElementById('noise-canvas');
+    if (!canvas) return;
+    
     const ctx = canvas.getContext('2d');
-    const container = document.getElementById('particles');
-    
-    if (!container) return;
-    
-    container.appendChild(canvas);
-    
-    let particles = [];
-    const particleCount = 60;
     
     function resize() {
         canvas.width = window.innerWidth;
@@ -49,54 +46,101 @@ function initParticles() {
     window.addEventListener('resize', resize);
     resize();
     
-    class Particle {
-        constructor() {
-            this.reset();
+    const imageData = ctx.createImageData(canvas.width, canvas.height);
+    const data = imageData.data;
+    
+    let frame = 0;
+    function updateNoise() {
+        frame++;
+        if (frame % 2 !== 0) {
+            requestAnimationFrame(updateNoise);
+            return;
         }
         
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.size = Math.random() * 2;
-            this.alpha = Math.random() * 0.5 + 0.2;
+        for (let i = 0; i < data.length; i += 4) {
+            const value = Math.random() * 255;
+            data[i] = value;
+            data[i + 1] = value;
+            data[i + 2] = value;
+            data[i + 3] = 255;
         }
-        
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            
-            if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                this.reset();
-            }
-        }
-        
-        draw() {
-            ctx.fillStyle = `rgba(0, 255, 136, ${this.alpha})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(updateNoise);
     }
     
-    for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
-    
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
-            p.update();
-            p.draw();
-        });
-        requestAnimationFrame(animate);
-    }
-    
-    animate();
+    updateNoise();
 }
 
-/* ========== Crypto Interactions ========== */
+/* ========== Count Up Animation ========== */
+function initCountUp() {
+    const counters = document.querySelectorAll('.stat-value');
+    
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count);
+                animateCounter(el, target);
+                countObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => countObserver.observe(counter));
+}
+
+function animateCounter(el, target) {
+    const duration = 2000;
+    const start = performance.now();
+    
+    function update(currentTime) {
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        
+        el.textContent = Math.floor(eased * target);
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    
+    requestAnimationFrame(update);
+}
+
+/* ========== Navigation ========== */
+function initNav() {
+    const nav = document.querySelector('.nav');
+    
+    const menuBtn = document.querySelector('.nav-menu');
+    
+    menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(10, 10, 15, 0.95)';
+        } else {
+            nav.style.background = 'rgba(10, 10, 15, 0.8)';
+        }
+    });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                nav.classList.remove('nav-open');
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+}
+
+/* ========== Crypto Dialog ========== */
 function initCryptoDialog() {
     const modal = document.getElementById('crypto-dialog');
     const btn = document.getElementById('crypto-more-btn');
@@ -105,29 +149,57 @@ function initCryptoDialog() {
 
     if (!modal || !btn) return;
 
-    btn.onclick = () => modal.classList.add('active');
-    closeBtn.onclick = () => modal.classList.remove('active');
-    overlay.onclick = () => modal.classList.remove('active');
+    btn.onclick = () => modal.classList.add('open');
+    closeBtn.onclick = () => modal.classList.remove('open');
+    overlay.onclick = () => modal.classList.remove('open');
 
     window.onkeydown = (e) => {
-        if (e.key === 'Escape') modal.classList.remove('active');
+        if (e.key === 'Escape') modal.classList.remove('open');
     };
+    
+    document.querySelectorAll('.btn-copy, .btn-copy-sm').forEach(copyBtn => {
+        copyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const address = this.dataset.address;
+            if (address) {
+                copyAddress(address, this);
+            }
+        });
+    });
 }
 
-function copyAddress(address) {
+function copyAddress(address, btn) {
     navigator.clipboard.writeText(address).then(() => {
-        const btn = event.target;
-        const originalText = btn.textContent;
-        btn.textContent = 'Copied!';
-        btn.style.background = '#fff';
-        btn.style.color = '#000';
+        if (!btn) {
+            btn = event.target.closest('button');
+        }
+        if (!btn) return;
+        
+        const svg = btn.innerHTML;
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>';
+        btn.classList.add('copied');
         
         setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.style.color = '';
+            btn.innerHTML = svg;
+            btn.classList.remove('copied');
         }, 2000);
     }).catch(err => {
         console.error('Failed to copy: ', err);
+    });
+}
+
+/* ========== Tech Glow Effect ========== */
+function initTechGlow() {
+    const items = document.querySelectorAll('.tech-item');
+    
+    items.forEach(item => {
+        item.addEventListener('mousemove', e => {
+            const rect = item.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            
+            item.style.setProperty('--mouse-x', `${x}%`);
+            item.style.setProperty('--mouse-y', `${y}%`);
+        });
     });
 }
