@@ -4,10 +4,6 @@
 
 \>\_ “There is no god but Allah, and Muhammad ﷺ is the Messenger of Allah"
 
----
-
-### 🌙
-
 \>\_ “Know the truth of Islam before forming an opinion. Ignorance judges fast; wisdom learns first.”
 
 ---
@@ -36,9 +32,9 @@
 | Project                                             | Description                                                        |
 | --------------------------------------------------- | ------------------------------------------------------------------ |
 | [imgrs](https://github.com/GrandpaEJ/imgrs)         | A Pillow-like image library built with **Rust + Python** 🖼️        |
-| [BustAPI](https://github.com/GrandpaEJ/BustAPI)     | The Ultra-High Performance **Python Web Framework** ⏩             |
+| [BustAPI](https://github.com/rustxpy/BustAPI)     | The Ultra-High Performance **Python Web Framework** ⏩             |
 | [Advancegg](https://github.com/GrandpaEJ/advancegg) | A “GG” image toolkit with **advanced features for Go packages** 🎮 |
-| [RustX](https://github.com/GrandpaEJx/RustX)        | A scripting language **Work inside `.rs` or Outside `.rsx`** ⚡    |
+| [Agent X](https://github.com/GrandpaEJ/Agent-x)        | A AI agent made for **Android Reverse Engineering** , made with **C** ⚡    |
 
 ---
 
