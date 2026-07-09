@@ -7,6 +7,16 @@
 \>\_ “Know the truth of Islam before forming an opinion. Ignorance judges fast; wisdom learns first.”
 
 ---
+### ⚡ Featured Projects
+
+| Project                                             | Description                                                        |
+| --------------------------------------------------- | ------------------------------------------------------------------ |
+| [imgrs](https://github.com/GrandpaEJ/imgrs)         | A Pillow-like image library built with **Rust + Python** 🖼️        |
+| [BustAPI](https://github.com/rustxpy/BustAPI)     | The Ultra-High Performance **Python Web Framework** ⏩             |
+| [Advancegg](https://github.com/GrandpaEJ/advancegg) | A “GG” image toolkit with **advanced features for Go packages** 🎮 |
+| [Agent X](https://github.com/GrandpaEJ/Agent-x)        | A AI agent made for **Android Reverse Engineering** , made with **C** ⚡    |
+
+---
 
 ### 🖤 GitHub Stats
 
@@ -24,17 +34,6 @@
 <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake-dark.svg#gh-dark-mode-only" />
 <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake.svg#gh-light-mode-only" />
 </p>
-
----
-
-### ⚡ Featured Projects
-
-| Project                                             | Description                                                        |
-| --------------------------------------------------- | ------------------------------------------------------------------ |
-| [imgrs](https://github.com/GrandpaEJ/imgrs)         | A Pillow-like image library built with **Rust + Python** 🖼️        |
-| [BustAPI](https://github.com/rustxpy/BustAPI)     | The Ultra-High Performance **Python Web Framework** ⏩             |
-| [Advancegg](https://github.com/GrandpaEJ/advancegg) | A “GG” image toolkit with **advanced features for Go packages** 🎮 |
-| [Agent X](https://github.com/GrandpaEJ/Agent-x)        | A AI agent made for **Android Reverse Engineering** , made with **C** ⚡    |
 
 ---
 
