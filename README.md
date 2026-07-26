@@ -14,7 +14,7 @@
 | [imgrs](https://github.com/GrandpaEJ/imgrs)         | A Pillow-like image library built with **Rust + Python** 🖼️        |
 | [BustAPI](https://github.com/rustxpy/BustAPI)     | The Ultra-High Performance **Python Web Framework** ⏩             |
 | [Advancegg](https://github.com/GrandpaEJ/advancegg) | A “GG” image toolkit with **advanced features for Go packages** 🎮 |
-| [Agent X](https://github.com/GrandpaEJ/Agent-x)        | A AI agent made for **Android Reverse Engineering** , made with **C** ⚡    |
+| [Agent X](https://github.com/GrandpaEJ/Agent-x)        | An AI agent made for **Android Reverse Engineering** , made with **C** ⚡    |
 
 ---
 
