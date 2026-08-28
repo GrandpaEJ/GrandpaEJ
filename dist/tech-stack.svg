@@ -11,67 +11,67 @@
     <g transform="translate(25, 65)">
       <circle cx="5" cy="-4" r="5" fill="#555555" />
       <text x="18" y="0" class="lang-name">C</text>
-      <text x="300" y="0" class="lang-percent" text-anchor="end">22.9%</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">22.6%</text>
       
       <!-- Progress Bar Background -->
       <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
       
       <!-- Progress Bar Foreground -->
-      <line x1="0" y1="12" x2="64.00372201408508" y2="12" stroke="#555555" stroke-width="8" stroke-linecap="round" />
+      <line x1="0" y1="12" x2="63.4198993450805" y2="12" stroke="#555555" stroke-width="8" stroke-linecap="round" />
     </g>
     <g transform="translate(25, 105)">
       <circle cx="5" cy="-4" r="5" fill="#dea584" />
       <text x="18" y="0" class="lang-name">Rust</text>
-      <text x="300" y="0" class="lang-percent" text-anchor="end">21.7%</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">22.4%</text>
       
       <!-- Progress Bar Background -->
       <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
       
       <!-- Progress Bar Foreground -->
-      <line x1="0" y1="12" x2="60.69898582545351" y2="12" stroke="#dea584" stroke-width="8" stroke-linecap="round" />
+      <line x1="0" y1="12" x2="62.6993836051736" y2="12" stroke="#dea584" stroke-width="8" stroke-linecap="round" />
     </g>
     <g transform="translate(25, 145)">
       <circle cx="5" cy="-4" r="5" fill="#3572A5" />
       <text x="18" y="0" class="lang-name">Python</text>
-      <text x="300" y="0" class="lang-percent" text-anchor="end">20.6%</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">20.4%</text>
       
       <!-- Progress Bar Background -->
       <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
       
       <!-- Progress Bar Foreground -->
-      <line x1="0" y1="12" x2="57.76187591491001" y2="12" stroke="#3572A5" stroke-width="8" stroke-linecap="round" />
+      <line x1="0" y1="12" x2="57.23498948546245" y2="12" stroke="#3572A5" stroke-width="8" stroke-linecap="round" />
     </g>
     <g transform="translate(25, 185)">
       <circle cx="5" cy="-4" r="5" fill="#f1e05a" />
       <text x="18" y="0" class="lang-name">JavaScript</text>
-      <text x="300" y="0" class="lang-percent" text-anchor="end">12.6%</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">12.5%</text>
       
       <!-- Progress Bar Background -->
       <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
       
       <!-- Progress Bar Foreground -->
-      <line x1="0" y1="12" x2="35.22196037838" y2="12" stroke="#f1e05a" stroke-width="8" stroke-linecap="round" />
+      <line x1="0" y1="12" x2="34.90067626757228" y2="12" stroke="#f1e05a" stroke-width="8" stroke-linecap="round" />
     </g>
     <g transform="translate(25, 225)">
       <circle cx="5" cy="-4" r="5" fill="#00ADD8" />
       <text x="18" y="0" class="lang-name">Go</text>
-      <text x="300" y="0" class="lang-percent" text-anchor="end">11.5%</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">11.4%</text>
       
       <!-- Progress Bar Background -->
       <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
       
       <!-- Progress Bar Foreground -->
-      <line x1="0" y1="12" x2="32.14075552799884" y2="12" stroke="#00ADD8" stroke-width="8" stroke-linecap="round" />
+      <line x1="0" y1="12" x2="31.847577239522884" y2="12" stroke="#00ADD8" stroke-width="8" stroke-linecap="round" />
     </g>
     <g transform="translate(25, 265)">
       <circle cx="5" cy="-4" r="5" fill="#e34c26" />
       <text x="18" y="0" class="lang-name">HTML</text>
-      <text x="300" y="0" class="lang-percent" text-anchor="end">3.4%</text>
+      <text x="300" y="0" class="lang-percent" text-anchor="end">3.3%</text>
       
       <!-- Progress Bar Background -->
       <line x1="0" y1="12" x2="300" y2="12" stroke="#21262d" stroke-width="8" stroke-linecap="round" />
       
       <!-- Progress Bar Foreground -->
-      <line x1="0" y1="12" x2="9.412974859379746" y2="12" stroke="#e34c26" stroke-width="8" stroke-linecap="round" />
+      <line x1="0" y1="12" x2="9.327112538678039" y2="12" stroke="#e34c26" stroke-width="8" stroke-linecap="round" />
     </g>
 </svg>
