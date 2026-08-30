@@ -9,20 +9,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
-    permissions:
-      contents: write
-      
+    
     steps:
       - uses: actions/checkout@v3
 
+      - name: Fetch contributions including private
+        run: |
+          curl -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+            "https://api.github.com/graphql" \
+            -d '{"query":"query { user(login: \"GrandpaEJ\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}' \
+            > contributions.json
+
       - uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           USERNAME: GrandpaEJ
-
+          
       - name: Push to output branch
         run: |
-          # Move generated files to a safe place
           mv profile-3d-contrib /tmp/profile-3d-contrib
           
           git config user.name "github-actions[bot]"
@@ -37,14 +41,12 @@ jobs:
             git rm -rf .
           fi
           
-          # Move files back
           rm -rf profile-3d-contrib
           mv /tmp/profile-3d-contrib profile-3d-contrib
           
           git add profile-3d-contrib/
-          git commit -m "Update 3D contribution graph" || echo "No changes to commit"
+          git commit -m "Update 3D contribution graph with private repos" || echo "No changes to commit"
           
-          # Retry push with rebase to handle parallel workflow collisions
           MAX_RETRIES=5
           RETRY_COUNT=0
           until git push origin output; do
