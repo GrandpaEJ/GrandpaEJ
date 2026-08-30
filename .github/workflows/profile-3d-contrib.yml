@@ -9,16 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
-    
+    permissions:
+      contents: write
+      
     steps:
       - uses: actions/checkout@v3
-
-      - name: Fetch contributions including private
-        run: |
-          curl -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
-            "https://api.github.com/graphql" \
-            -d '{"query":"query { user(login: \"GrandpaEJ\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}' \
-            > contributions.json
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
 
       - uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
@@ -29,8 +27,10 @@ jobs:
         run: |
           mv profile-3d-contrib /tmp/profile-3d-contrib
           
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "GrandpaEJ"
+          git config user.email "your-email@example.com"
+          
+          git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/GrandpaEJ/GrandpaEJ.git
           
           git fetch origin output || echo "Branch output not found"
           
@@ -47,15 +47,4 @@ jobs:
           git add profile-3d-contrib/
           git commit -m "Update 3D contribution graph with private repos" || echo "No changes to commit"
           
-          MAX_RETRIES=5
-          RETRY_COUNT=0
-          until git push origin output; do
-            RETRY_COUNT=$((RETRY_COUNT+1))
-            if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then
-              echo "Failed to push after $MAX_RETRIES attempts"
-              exit 1
-            fi
-            echo "Push failed, rebasing and retrying... ($RETRY_COUNT/$MAX_RETRIES)"
-            git pull --rebase origin output
-            sleep $(( (RANDOM % 10) + 5 ))
-          done
+          git push origin output
