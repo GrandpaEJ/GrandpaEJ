@@ -35,12 +35,13 @@
 <img src="https://raw.githubusercontent.com/GrandpaEJ/GrandpaEJ/output/dist/github-snake.svg#gh-light-mode-only" />
 </p>
 
+<!--
 ---
 
 ### 👁️ Visitor
 
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=grandpaej)
-
+-->
 ---
 
 </div>
